@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+from PyQt5 import QtGui
 
 class mainWindow (QMainWindow):
     def __init__(self):
@@ -28,6 +28,7 @@ class mainWindow (QMainWindow):
     ########################################Frontend Part of The Application########################################
     def loadWindow (self):
         ###Window Configurations###
+        self.setWindowIcon(QtGui.QIcon('icon.png'))
         self.setWindowTitle('Calculator')
         self.setGeometry(250, 55, 300, 450)
         self.setStyleSheet('background-color: #202020;')
