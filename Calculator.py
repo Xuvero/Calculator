@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
 class mainWindow (QMainWindow):
@@ -40,6 +41,7 @@ class mainWindow (QMainWindow):
         self.mainInput.move(5, 5)
         self.mainInput.resize(290, 115)
         self.mainInput.setStyleSheet('background-color: #202020; color: white; font-size: 40px;')
+        self.mainInput.setAlignment(Qt.AlignRight)
 
     def windowAnswerInput (self):
         ###Show The Answers Label###
@@ -48,6 +50,7 @@ class mainWindow (QMainWindow):
         self.answerInput.resize(290, 70)
         self.answerInput.setStyleSheet('background-color: #202020; color: white;')
         self.answerInput.setReadOnly(True)
+        self.answerInput.setAlignment(Qt.AlignRight)
 
     def windowNumberButtons (self):
         ###Button Number Zero###
@@ -308,12 +311,16 @@ class mainWindow (QMainWindow):
         self.text = self.mainInput.text()
         self.mainInput.setText('')
         self.answerInput.setText('')
-
+    
     def writeEqualButton (self):
-        ###Equal###
-        self.getAccount = self.mainInput.text() 
-        self.ans = eval(self.getAccount) 
-        self.answerInput.setText(str(self.ans))
+        ###Try to do equal if is not possible do the except###
+        try:
+            self.getAccount = self.mainInput.text() 
+            self.ans = eval(self.getAccount) 
+            self.answerInput.setText(str(self.ans))
+
+        except:
+            self.answerInput.setText('Incorrect Expression.')
 
 
 application = QApplication(sys.argv)
