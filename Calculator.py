@@ -7,11 +7,8 @@ class mainWindow (QMainWindow):
     def __init__(self):
         super().__init__()
 
-        ###Input That You Make The Account###
+        ###Input That You Make The Account And Show The Answer###
         self.windowAccountInput()
-
-        ###Label That Show The Answer###
-        self.windowAnswerInput()
 
         ###Buttons With the Number To Type###
         self.windowNumberButtons()
@@ -30,190 +27,486 @@ class mainWindow (QMainWindow):
         ###Window Configurations###
         self.setWindowIcon(QtGui.QIcon('icon.png'))
         self.setWindowTitle('Calculator')
-        self.setGeometry(250, 55, 300, 450)
-        self.setStyleSheet('background-color: #202020;')
-        self.setMaximumSize(300, 450)
-        self.setMinimumSize(300, 450)
+        self.setGeometry(250, 55, 290, 445)
+        self.setStyleSheet('background-color: #151515;')
+        self.setMaximumSize(290, 445)
+        self.setMinimumSize(290, 445)
         self.show()
 
     def windowAccountInput (self):
         ###Here You Make The Accounts###
         self.mainInput = QLineEdit(self)
-        self.mainInput.move(5, 5)
-        self.mainInput.resize(290, 115)
-        self.mainInput.setStyleSheet('background-color: #202020; color: white; font-size: 40px;')
+        self.mainInput.move(10, 10)
+        self.mainInput.resize(270, 70)
+        self.mainInput.setStyleSheet(
+            '''
+                QLineEdit{
+                    border: none;
+                    background-color: #151515;
+                    color: white;
+                    font-size: 40px;
+                }
+            '''
+        )
         self.mainInput.setAlignment(Qt.AlignRight)
-
-    def windowAnswerInput (self):
-        ###Show The Answers Label###
-        self.answerInput = QLineEdit(self)
-        self.answerInput.move(5, 125)
-        self.answerInput.resize(290, 70)
-        self.answerInput.setStyleSheet('background-color: #202020; color: white;')
-        self.answerInput.setReadOnly(True)
-        self.answerInput.setAlignment(Qt.AlignRight)
 
     def windowNumberButtons (self):
         ###Button Number Zero###
         self.zeroButton = QPushButton(self)
         self.zeroButton.setText('0')
-        self.zeroButton.move(75, 400)
-        self.zeroButton.resize(75, 50)
-        self.zeroButton.setStyleSheet('background-color: #202020; color: white;')
+        self.zeroButton.move(10, 375)
+        self.zeroButton.resize(130, 60)
+        self.zeroButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.zeroButton.clicked.connect(self.writeTheNumberZero)
 
         ###Button Number One###
         self.oneButton = QPushButton(self)
         self.oneButton.setText('1')
-        self.oneButton.move(0, 250)
-        self.oneButton.resize(75, 50)
-        self.oneButton.setStyleSheet('background-color: #202020; color: white;')
+        self.oneButton.move(10, 165)
+        self.oneButton.resize(60, 60)
+        self.oneButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.oneButton.clicked.connect(self.writeTheNumberOne)
 
         ###Button Number Two###
         self.twoButton = QPushButton(self)
         self.twoButton.setText('2')
-        self.twoButton.move(75, 250)
-        self.twoButton.resize(75, 50)
-        self.twoButton.setStyleSheet('background-color: #202020; color: white;')
+        self.twoButton.move(80, 165)
+        self.twoButton.resize(60, 60)
+        self.twoButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.twoButton.clicked.connect(self.writeTheNumberTwo)
 
         ###Button Number Tree###
         self.treeButton = QPushButton(self)
         self.treeButton.setText('3')
-        self.treeButton.move(150, 250)
-        self.treeButton.resize(75, 50)
-        self.treeButton.setStyleSheet('background-color: #202020; color: white;')
+        self.treeButton.move(150, 165)
+        self.treeButton.resize(60, 60)
+        self.treeButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.treeButton.clicked.connect(self.writeTheNumberTree)
 
         ###Button Number Four###
         self.fourButton = QPushButton(self)
         self.fourButton.setText('4')
-        self.fourButton.move(0, 300)
-        self.fourButton.resize(75, 50)
-        self.fourButton.setStyleSheet('background-color: #202020; color: white;')
+        self.fourButton.move(10, 235)
+        self.fourButton.resize(60, 60)
+        self.fourButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.fourButton.clicked.connect(self.writeTheNumberFour)
 
         ###Button Number Five###
         self.fiveButton = QPushButton(self)
         self.fiveButton.setText('5')
-        self.fiveButton.move(75, 300)
-        self.fiveButton.resize(75, 50)
-        self.fiveButton.setStyleSheet('background-color: #202020; color: white;')
+        self.fiveButton.move(80, 235)
+        self.fiveButton.resize(60, 60)
+        self.fiveButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.fiveButton.clicked.connect(self.writeTheNumberFive)
 
         ###Button Number Six###
         self.sixButton = QPushButton(self)
         self.sixButton.setText('6')
-        self.sixButton.move(150, 300)
-        self.sixButton.resize(75, 50)
-        self.sixButton.setStyleSheet('background-color: #202020; color: white;')
+        self.sixButton.move(150, 235)
+        self.sixButton.resize(60, 60)
+        self.sixButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.sixButton.clicked.connect(self.writeTheNumberSix)
 
         ###Button Number Seven###
         self.sevenButton = QPushButton(self)
         self.sevenButton.setText('7')
-        self.sevenButton.move(0, 350)
-        self.sevenButton.resize(75, 50)
-        self.sevenButton.setStyleSheet('background-color: #202020; color: white;')
+        self.sevenButton.move(10, 305)
+        self.sevenButton.resize(60, 60)
+        self.sevenButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.sevenButton.clicked.connect(self.writeTheNumberSeven)
 
         ###Button Number Eight###
         self.eightButton = QPushButton(self)
         self.eightButton.setText('8')
-        self.eightButton.move(75, 350)
-        self.eightButton.resize(75, 50)
-        self.eightButton.setStyleSheet('background-color: #202020; color: white;')
+        self.eightButton.move(80, 305)
+        self.eightButton.resize(60, 60)
+        self.eightButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.eightButton.clicked.connect(self.writeTheNumberEight)
 
         ###Button Number Nine###
         self.nineButton = QPushButton(self)
         self.nineButton.setText('9')
-        self.nineButton.move(150, 350)
-        self.nineButton.resize(75, 50)
-        self.nineButton.setStyleSheet('background-color: #202020; color: white;')
+        self.nineButton.move(150, 305)
+        self.nineButton.resize(60, 60)
+        self.nineButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.nineButton.clicked.connect(self.writeTheNumberNine)
 
     def diferentCaracterButtons (self):
         ###Delete Button###
         self.deleteButton = QPushButton(self)
         self.deleteButton.setText('C')
-        self.deleteButton.move(0, 200)
-        self.deleteButton.resize(75, 50)
-        self.deleteButton.setStyleSheet('background-color: #D90429; color: black;')
-        self.deleteButton.clicked.connect(self.writeDelete)
+        self.deleteButton.move(10, 95)
+        self.deleteButton.resize(60, 60)
+        self.deleteButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #D90429;
+                    color: black;
+                    border-radius: 15px;
+                }
 
-        ###Percent Button###
-        self.percentButton = QPushButton(self)
-        self.percentButton.setText('%')
-        self.percentButton.move(150, 200)
-        self.percentButton.resize(75, 50)
-        self.percentButton.setStyleSheet('background-color: #202020; color: #89fc00;')
-        self.percentButton.clicked.connect(self.writePercent)
+                QPushButton:hover{
+                    background-color: #f20429;
+                }
+
+                QPushButton:pressed{
+                    background-color: #A80429;
+                }
+            '''
+            )
+        self.deleteButton.clicked.connect(self.writeDelete)
 
         ###Parentheses Button###
         self.parenthesesButton = QPushButton(self)
         self.parenthesesButton.setText('()')
-        self.parenthesesButton.move(75, 200)
-        self.parenthesesButton.resize(75, 50)
-        self.parenthesesButton.setStyleSheet('background-color: #202020; color: #89fc00;')
+        self.parenthesesButton.move(80, 95)
+        self.parenthesesButton.resize(60, 60)
+        self.parenthesesButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: #89fc00;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.parenthesesButton.clicked.connect(self.writeParentheses)
+
+        ###Percent Button###
+        self.percentButton = QPushButton(self)
+        self.percentButton.setText('%')
+        self.percentButton.move(150, 95)
+        self.percentButton.resize(60, 60)
+        self.percentButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: #89fc00;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
+        self.percentButton.clicked.connect(self.writePercent)
 
         ###Comma Button###
         self.commaButton = QPushButton(self)
         self.commaButton.setText('.')
-        self.commaButton.move(150, 400)
-        self.commaButton.resize(75, 50)
-        self.commaButton.setStyleSheet('background-color: #202020; color: white;')
-        self.commaButton.clicked.connect(self.writeComma)
+        self.commaButton.move(150, 375)
+        self.commaButton.resize(60, 60)
+        self.commaButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: white;
+                    border-radius: 15px;
+                }
 
-        ###Negative Button###
-        self.negativeButton = QPushButton(self)
-        self.negativeButton.setText('+/-')
-        self.negativeButton.move(0, 400)
-        self.negativeButton.resize(75, 50)
-        self.negativeButton.setStyleSheet('background-color: #202020; color: white;')
-        self.negativeButton.clicked.connect(self.writeNegative)
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+            )
+        self.commaButton.clicked.connect(self.writeComma)
 
         ###Equal Button###
         self.equalButton = QPushButton(self)
         self.equalButton.setText('=')
-        self.equalButton.move(225, 400)
-        self.equalButton.resize(75, 50)
-        self.equalButton.setStyleSheet('background-color: #89fc00; color: black;')
+        self.equalButton.move(220, 375)
+        self.equalButton.resize(60, 60)
+        self.equalButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #89fc00;
+                    color: black;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #9ffc1f;
+                }
+
+                QPushButton:pressed{
+                    background-color: #8ddd00;
+                }
+            '''
+            )
         self.equalButton.clicked.connect(self.writeEqualButton)
 
     def normalAcountsButtons (self):
         ###Division Button###
         self.divisionButton = QPushButton(self)
         self.divisionButton.setText('÷')
-        self.divisionButton.move(225, 250)
-        self.divisionButton.resize(75, 50)
-        self.divisionButton.setStyleSheet('background-color: #202020; color: #89fc00;')
+        self.divisionButton.move(220, 165)
+        self.divisionButton.resize(60, 60)
+        self.divisionButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: #89fc00;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.divisionButton.clicked.connect(self.writeDivision)
 
         ###Minus Button###
         self.minusButton = QPushButton(self)
         self.minusButton.setText('-')
-        self.minusButton.move(225, 350)
-        self.minusButton.resize(75, 50)
-        self.minusButton.setStyleSheet('background-color: #202020; color: #89fc00;')
+        self.minusButton.move(220, 235)
+        self.minusButton.resize(60, 60)
+        self.minusButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: #89fc00;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.minusButton.clicked.connect(self.writeMinus)
 
         ###Times Button###
         self.timesButton = QPushButton(self)
         self.timesButton.setText('x')
-        self.timesButton.move(225, 200)
-        self.timesButton.resize(75, 50)
-        self.timesButton.setStyleSheet('background-color: #202020; color: #89fc00;')
+        self.timesButton.move(220, 95)
+        self.timesButton.resize(60, 60)
+        self.timesButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: #89fc00;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.timesButton.clicked.connect(self.writeTimes)
 
         ###Plus Button###
         self.plusButton = QPushButton(self)
         self.plusButton.setText('+')
-        self.plusButton.move(225, 300)
-        self.plusButton.resize(75, 50)
-        self.plusButton.setStyleSheet('background-color: #202020; color: #89fc00;')
+        self.plusButton.move(220, 305)
+        self.plusButton.resize(60, 60)
+        self.plusButton.setStyleSheet(
+            '''
+                QPushButton{
+                    background-color: #202020;
+                    color: #89fc00;
+                    border-radius: 15px;
+                }
+
+                QPushButton:hover{
+                    background-color: #252525;
+                }
+
+                QPushButton:pressed{
+                    background-color: #151515;
+                }
+            '''
+        )
         self.plusButton.clicked.connect(self.writePlus)
 
     ########################################Backend of The Application########################################
@@ -311,19 +604,18 @@ class mainWindow (QMainWindow):
         ###Delete###
         self.text = self.mainInput.text()
         self.mainInput.setText('')
-        self.answerInput.setText('')
     
     def writeEqualButton (self):
         ###Try to do equal if is not possible do the except###
         try:
             self.getAccount = self.mainInput.text() 
             self.ans = eval(self.getAccount) 
-            self.answerInput.setText(str(self.ans))
+            self.mainInput.setText(str(self.ans))
 
         except:
-            self.answerInput.setText('Incorrect Expression.')
+            self.mainInput.setText('Incorrect Expression.')
 
 
 application = QApplication(sys.argv)
 loadMainWindow = mainWindow()
-sys.exit = QMainWindow(application.exec_())
+sys.exit = QMainWindow(application.exec())
