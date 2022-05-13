@@ -22,7 +22,7 @@ class mainWindow (QMainWindow):
         ###Function That Load The Window###
         self.loadWindow()
 
-    ########################################Frontend Part of The Application########################################
+    #######################################Frontend Part of The Application#######################################
     def loadWindow (self):
         ###Window Configurations###
         self.setWindowIcon(QtGui.QIcon('icon.png'))
