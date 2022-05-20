@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
-from PyQt5 import QtGui
+from PyQt5.QtGui import *
 
 class mainWindow (QMainWindow):
     def __init__(self):
@@ -25,7 +25,7 @@ class mainWindow (QMainWindow):
     #######################################Frontend Part of The Application#######################################
     def loadWindow (self):
         ###Window Configurations###
-        self.setWindowIcon(QtGui.QIcon('icon.png'))
+        self.setWindowIcon(QIcon('icon.png'))
         self.setWindowTitle('Calculator')
         self.setGeometry(250, 55, 290, 445)
         self.setStyleSheet('background-color: #151515;')
@@ -44,7 +44,7 @@ class mainWindow (QMainWindow):
                     border: none;
                     background-color: #151515;
                     color: white;
-                    font-size: 40px;
+                    font-size: 25px;
                 }
             '''
         )
@@ -411,6 +411,9 @@ class mainWindow (QMainWindow):
             '''
             )
         self.equalButton.clicked.connect(self.writeEqualButton)
+        
+        shotcut = QShortcut(QKeySequence(Qt.Key_Return), self)
+        shotcut.activated.connect(self.writeEqualButton)
 
     def normalAcountsButtons (self):
         ###Division Button###
