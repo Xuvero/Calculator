@@ -411,7 +411,6 @@ class mainWindow (QMainWindow):
             '''
             )
         self.equalButton.clicked.connect(self.writeEqualButton)
-        
         shotcut = QShortcut(QKeySequence(Qt.Key_Return), self)
         shotcut.activated.connect(self.writeEqualButton)
 
