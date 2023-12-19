@@ -4,7 +4,7 @@ This calculator project was maded to make a calculator in the most simple way us
 <h2>Project Over View</h2>
 Its a common calculator with a cool theme on it.
 
-<img src=""/>
+<img src="/Media/main.png"/>
 
 <p>Quick Observations:</p>
 <ul>
