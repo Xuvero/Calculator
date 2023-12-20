@@ -1,5 +1,5 @@
 <h1>Simple Calculator</h1>
-This calculator project was maded to make a calculator in the most simple way using pyqt5. The layout is updated and the enter key inte "=" button works now.
+This calculator project was maded to make a calculator in the most simple way using pyqt5. The layout is updated and the enter key enter "=" button works now.
 
 <h2>Project Over View</h2>
 Its a common calculator with a cool theme on it.
